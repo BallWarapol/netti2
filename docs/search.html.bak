@@ -17,7 +17,7 @@ function search() {
 	if (net[i].search(/^ ?[0-9]*\./)>-1 && ( net[i].slice(-4)=="วาระ" || net[i].slice(-7)=="สัมปาตะ" || net[i].slice(-7)=="วิภังค์")) title=net[i];
 	if (net[i].search(kw)>-1)
 	{
-	result.innerHTML+="</br><a href='./docs/num/ข้อ"+prependZeros(n)+".html'> "+title+" </a></br>"+net[i].replace(kw,"<span style='color:red;'><b><i>"+kw+"</i></b></span>")+"</br>";
+	result.innerHTML+="</br><a href='./num/ข้อ"+prependZeros(n)+".html'> "+title+" เนตติ ข้อ "+n+"</a></br>"+net[i].replace(kw,"<span style='color:red;'><b><i>"+kw+"</i></b></span>")+"</br>";
 	}
 	} 
 }
@@ -26,10 +26,14 @@ function prependZeros(num){
     return (Array(Math.max(4-str.length, 0)).join("0") + str);
 }
 </SCRIPT>
-<table style="width: 609px; margin-left: auto; margin-right: auto; "><tbody><tr ><td style="width: 608px; text-align: justify;"><h2>ค้นเนตติปกรณ์แปล</h2>
-<input type=text id=kw autofocus > <button onclick=search();>search</button><hr/>
+<table style="width: 609px; margin-left: auto; margin-right: auto; "><tbody><tr ><td style="width: 608px; text-align: justify;">
+สารบัญเนตติ <a href="./title/index.html">ห้วเรื่อง</a>, <a href="./num/index.html">เลขข้อ</a> | เนตติไฟล์เดียว <a href="./เนตติปกรณ์(จบ).html">html</a>, <a href="./เนตติ.txt">text</a></br>
+<h2>ค้นเนตติปกรณ์แปล</h2>
+<FORM action="javascript:search();">
+<input type=text id=kw autofocus > <button onclick=search();>ค้น</button>
+</FORM><hr/>
 <div id="result"></div>
-</td></tr></tbody></table><center><i> <a href="../title/index.html">[ไปยังสารบัญหัวเรื่อง]</a>(ไม่สงวนลิขสิทธิ์)</i></center>
+</td></tr></tbody></table><center><i>(ไม่สงวนลิขสิทธิ์)</i></center>
 <div id="net" style="display:none;">
 [0] เนตติปกรณ์แปล
 นโม ตสฺส ภควโต อรหโต สมฺมาสมฺพุทฺธสฺส.
