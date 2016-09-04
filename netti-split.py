@@ -1,7 +1,7 @@
 #-*-encoding:utf8-*-
 import re
 title=""
-with open("./docs/เนตติ.txt", "r") as f:
+with open("./เนตติ.txt", "r") as f:
 	data=f.read()
 	index=""
 	#gen by one stop page
@@ -49,7 +49,7 @@ with open("./docs/เนตติ.txt", "r") as f:
 
     document.getElementById("toc").innerHTML += toc;
 };</script>
-<body><table style="width: 609px; margin-left: auto; margin-right: auto; "><tbody><tr ><td style="width: 608px; text-align: justify;" id="contents">สารบัญเนตติ <a href="./title/index.html">ห้วเรื่อง</a>, <a href="./num/index.html">เลขข้อ</a> | เนตติไฟล์เดียว <a href="./เนตติปกรณ์(จบ).html">html</a>, <a href="./เนตติ.txt">text</a> | <a href="./search.html">หน้าค้นหา</a></br>
+<body><table style="width: 609px; margin-left: auto; margin-right: auto; "><tbody><tr ><td style="width: 608px; text-align: justify;" id="contents">สารบัญเนตติ <a href="./title/index.html">ห้วเรื่อง</a>, <a href="./num/index.html">เลขข้อ</a> | เนตติไฟล์เดียว <a href="./เนตติปกรณ์(จบ).html">html</a>, <a href="./เนตติ.txt">text</a></br>
 <h2>เนตติปกรณ์แปล </h2>    <div id="toc">
         <h3>สารบัญ</h3>
     </div><hr />%s</td></tr></tbody></table><center><i>(ไม่สงวนลิขสิทธิ์)</i></center></body></html>"""%result)			
@@ -62,13 +62,13 @@ with open("./docs/เนตติ.txt", "r") as f:
 		n="%03d"%i
 		if title !="": index+="""<li><a href="./ข้อ%s.html">ข้อ %s (%s)</a></li>"""%(n,i,title)
 		with open("./docs/num/ข้อ%s.html"%n, "w") as f2:
-			f2.write("""<html><head><meta charset="utf-8" /><meta name="description" content="เนตติ-ข้อ %s (%s)" /></head><body><table style="width: 609px; margin-left: auto; margin-right: auto; "><tbody><tr ><td style="width: 608px; text-align: justify;">สารบัญเนตติ <a href="../title/index.html">ห้วเรื่อง</a>, <a href="./index.html">เลขข้อ</a> | เนตติไฟล์เดียว <a href="../เนตติปกรณ์(จบ).html">html</a>, <a href="../เนตติ.txt">text</a> | <a href="../search.html">หน้าค้นหา</a></br>
-<h2>เนตติปกรณ์แปล ข้อ  %s (%s)</h2>&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;[%s</td></tr></tbody></table><center><i><a href="./index.html">สารบัญ</a>  | <a href="../search.html">หน้าค้นหา</a></br>(ไม่สงวนลิขสิทธิ์)</i></center></body></html>"""%(n,title, n,title,l.replace("\n", "</br>&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;")))
+			f2.write("""<html><head><meta charset="utf-8" /><meta name="description" content="เนตติ-ข้อ %s (%s)" /></head><body><table style="width: 609px; margin-left: auto; margin-right: auto; "><tbody><tr ><td style="width: 608px; text-align: justify;">สารบัญเนตติ <a href="./title/index.html">ห้วเรื่อง</a>, <a href="./num/index.html">เลขข้อ</a> | เนตติไฟล์เดียว <a href="./เนตติปกรณ์(จบ).html">html</a>, <a href="./เนตติ.txt">text</a></br>
+<h2>เนตติปกรณ์แปล ข้อ  %s (%s)</h2>&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;[%s</td></tr></tbody></table><center><i><a href="./index.html">[สารบัญ]</a>  | <a href="../search.html">หน้าค้นหา</a></br>(ไม่สงวนลิขสิทธิ์)</i></center></body></html>"""%(n,title, n,title,l.replace("\n", "</br>&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;")))
 		z=l.split("\n")[-1].split(" ")
 		if re.search("^ ?[0-9]*\.|\+",z[0]):
 			title= " ".join(z)
 	with open("./docs/num/index.html", "w") as f3:
-		f3.write("""<html><head><meta charset="utf-8" /><meta name="description" content="สารบัญเลขข้อเนตติปกรณ์แปล" /><title>สารบัญเลขข้อเนตติปกรณ์แปล</title></head><body><table style="width: 609px; margin-left: auto; margin-right: auto; "><tbody><tr ><td style="width: 608px; text-align: justify;">สารบัญเนตติ <a href="../title/index.html">ห้วเรื่อง</a>, <a href="./index.html">เลขข้อ</a> | เนตติไฟล์เดียว <a href="../เนตติปกรณ์(จบ).html">html</a>, <a href="../เนตติ.txt">text</a> | <a href="../search.html">หน้าค้นหา</a></br><h2>เนตติปกรณ์แปล : สารบัญเลขข้อ</h2><ul>%s</ul></td></tr></tbody></table><center><i> <a href="../title/index.html">[ไปยังสารบัญหัวเรื่อง]</a> | <a href="../search.html">หน้าค้นหา</a></br>(ไม่สงวนลิขสิทธิ์)</i></center></body></html>"""%(index,))
+		f3.write("""<html><head><meta charset="utf-8" /><meta name="description" content="สารบัญเลขข้อเนตติปกรณ์แปล" /><title>สารบัญเลขข้อเนตติปกรณ์แปล</title></head><body><table style="width: 609px; margin-left: auto; margin-right: auto; "><tbody><tr ><td style="width: 608px; text-align: justify;">สารบัญเนตติ <a href="./title/index.html">ห้วเรื่อง</a>, <a href="./num/index.html">เลขข้อ</a> | เนตติไฟล์เดียว <a href="./เนตติปกรณ์(จบ).html">html</a>, <a href="./เนตติ.txt">text</a></br><h2>เนตติปกรณ์แปล : สารบัญเลขข้อ</h2><ul>%s</ul></td></tr></tbody></table><center><i> <a href="../title/index.html">[ไปยังสารบัญหัวเรื่อง]</a> | <a href="../search.html">หน้าค้นหา</a></br>(ไม่สงวนลิขสิทธิ์)</i></center></body></html>"""%(index,))
 	#gen by title
 	cont=""
 	title=""
@@ -83,10 +83,10 @@ with open("./docs/เนตติ.txt", "r") as f:
 			index+="""<li><a href="./เนตติ-%s.html">%s</a></li>"""%(title,title)
 			with open("./docs/title/เนตติ-%s.html"%ltitle, "w") as f2:
 				f2.write("%s</td></tr></tbody></table><center><i>(ไม่สงวนลิขสิทธิ์)</i></center></body></html>"%(cont.replace("\n", "</br>&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;")))
-				cont="""<html><head><meta charset="utf-8" /><meta name="description" content="เนตติ-%s" /></head><body><table style="width: 609px; margin-left: auto; margin-right: auto; "><tbody><tr ><td style="width: 608px; text-align: justify;">สารบัญเนตติ <a href="./index.html">ห้วเรื่อง</a>, <a href="../num/index.html">เลขข้อ</a> | เนตติไฟล์เดียว <a href="../เนตติปกรณ์(จบ).html">html</a>, <a href="../เนตติ.txt">text</a> | <a href="../search.html">หน้าค้นหา</a></br><h2>เนตติปกรณ์แปล : %s</h2><CENTER><i><a href="./index.html">สารบัญ</a></i></CENTER>&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;"""%(title, title)
+				cont="""<html><head><meta charset="utf-8" /><meta name="description" content="เนตติ-%s" /></head><body><table style="width: 609px; margin-left: auto; margin-right: auto; "><tbody><tr ><td style="width: 608px; text-align: justify;">สารบัญเนตติ <a href="./title/index.html">ห้วเรื่อง</a>, <a href="./num/index.html">เลขข้อ</a> | เนตติไฟล์เดียว <a href="./เนตติปกรณ์(จบ).html">html</a>, <a href="./เนตติ.txt">text</a></br><h2>เนตติปกรณ์แปล : %s</h2><CENTER><i><a href="./index.html">[สารบัญ]</a></i></CENTER>&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;"""%(title, title)
 	with open("./docs/title/เนตติ-%s.html"%ltitle, "w") as f2:
-		f2.write("""%s</td></tr></tbody></table><center><i><a href="./index.html">สารบัญ</a>  | <a href="../search.html">หน้าค้นหา</a></br>(ไม่สงวนลิขสิทธิ์)</i></center></body></html>"""%(cont.replace("\n", "</br>&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;")))
+		f2.write("""%s</td></tr></tbody></table><center><i><a href="./index.html">[สารบัญ]</a>  | <a href="../search.html">หน้าค้นหา</a></br>(ไม่สงวนลิขสิทธิ์)</i></center></body></html>"""%(cont.replace("\n", "</br>&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;")))
 	with open("./docs/title/index.html", "w") as f3:
-		f3.write("""<html><head><meta charset="utf-8" /><meta name="description" content="สารบัญเนตติปกรณ์แปล" /><title>สารบัญเนตติปกรณ์แปล</title></head><body><table style="width: 609px; margin-left: auto; margin-right: auto; "><tbody><tr ><td style="width: 608px; text-align: justify;">สารบัญเนตติ <a href="./index.html">ห้วเรื่อง</a>, <a href="../num/index.html">เลขข้อ</a> | เนตติไฟล์เดียว <a href="../เนตติปกรณ์(จบ).html">html</a>, <a href="../เนตติ.txt">text</a> | <a href="../search.html">หน้าค้นหา</a></br><h2>เนตติปกรณ์แปล : สารบัญหัวเรื่อง</h2><ul>%s</ul></td></tr></tbody></table><center><i><a href="../num/index.html">[ไปยังสารบัญเลขข้อ]</a> | <a href="../search.html">หน้าค้นหา</a></br>(ไม่สงวนลิขสิทธิ์)</i></center></body></html>"""%(index,))
+		f3.write("""<html><head><meta charset="utf-8" /><meta name="description" content="สารบัญเนตติปกรณ์แปล" /><title>สารบัญเนตติปกรณ์แปล</title></head><body><table style="width: 609px; margin-left: auto; margin-right: auto; "><tbody><tr ><td style="width: 608px; text-align: justify;">สารบัญเนตติ <a href="./index.html">ห้วเรื่อง</a>, <a href="../num/index.html">เลขข้อ</a> | เนตติไฟล์เดียว <a href="../เนตติปกรณ์(จบ).html">html</a>, <a href="../เนตติ.txt">text</a></br><h2>เนตติปกรณ์แปล : สารบัญหัวเรื่อง</h2><ul>%s</ul></td></tr></tbody></table><center><i><a href="../num/index.html">[ไปยังสารบัญเลขข้อ]</a> | <a href="../search.html">หน้าค้นหา</a></br>(ไม่สงวนลิขสิทธิ์)</i></center></body></html>"""%(index,))
 
 			
