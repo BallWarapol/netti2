@@ -1,0 +1,2 @@
+rm -r ./public; mkdir ./public; mkdir ./public/num; mkdir ./public/title;  python3 ./netti-split.py;cp ./netti.txt ./public; cp find6.js ./public; cp search.html public; rm -r docs; mv $PWD/public $PWD/docs
+ 
